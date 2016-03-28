@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Link octicon fonts to: $1"
+
+mkdir -p $1
+cp node_modules/lyssl/node_modules/octicons/octicons/octicons.eot $1
+cp node_modules/lyssl/node_modules/octicons/octicons/octicons.ttf $1
+cp node_modules/lyssl/node_modules/octicons/octicons/octicons.svg $1
+cp node_modules/lyssl/node_modules/octicons/octicons/octicons.woff $1
+
+echo "Done"
+exit 0
