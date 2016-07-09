@@ -2,7 +2,7 @@
  * Github's Octicons icons for Lyzzl
  *
  * @link https://octicons.github.com
- * 
+ *
  * @package Lyssl
  * @module Icons
  * @submodule Octicons
@@ -189,14 +189,14 @@ $icons['zap'] = '\26A1'
 /**
  * Styles an octicon icon
  *
- * @mixin lz-octicon
+ * @mixin ll-octicon
  * @param  {string} $name    Icon name
  * @param  {size} $size      Icon size
  * @param  {size} $padding   Icon right padding
  *
  * @example {stylus}
  * .link
- *   lz-octicon(gear, 16px)
+ *   ll-octicon(gear, 16px)
  *   color #000
  *
  * @preview
@@ -371,7 +371,7 @@ $icons['zap'] = '\26A1'
  *   <li class="octicon octicon-zap"><span class="name">zap</span></li>
  * </ul>
  */
-lz-octicon($name, $size = 16px, $padding = 0)
+ll-octicon($name, $size = 16px, $padding = 0)
     &::before
         padding-right $padding
         font normal normal normal $size/1 octicons

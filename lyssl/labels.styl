@@ -2,31 +2,32 @@
  * @package Lyssl
  * @module Labels
  */
- 
+
 /**
  * Label middleware
  *
  * Styles a label tag
  *
- * @selector ly-label
- * 
+ * @selector ll-label
+ *
  */
-lz-label()
+ll-label()
     border-radius 5px
     padding 4px
     font-size 14px
     color #fff
     display inline-block
-    
+
     &.label-public
         background-color $greenFrog
 
     &.label-protected
         background-color $orangeSun
+        color #000
 
     &.label-private
         background-color $redCherry
-        
+
     &.label-version
         background-color $redCherry
 
@@ -35,11 +36,10 @@ lz-label()
 
     &.label-beta
         background-color $blueLagoon
-        
+
     &.label-new
         background-color $yellowSnow
         color #000
 
     &.label-deprecated
         background-color $brownWood
-
