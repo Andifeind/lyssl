@@ -4,36 +4,36 @@
  */
 
 /**
- * Tooltip middleware
+ * Tooltip mixin
  *
  * Styles a tooltip tag
  *
- * @selector ll-tooltip
+ * @mixin ll-tooltip
  *
  */
 ll-tooltip()
-    border-radius 5px
-    padding 2px 5px
-    font-size 14px
-    color #fff
+  border-radius 5px
+  padding 2px 5px
+  font-size 14px
+  color #fff
+  position absolute
+  background-color $blueLagoon
+
+  &::after
+    content ''
+    width 0
+    height 0
     position absolute
-    background-color $blueLagoon
+    bottom -8px
+    left 50%
+    margin-left -8px
+    border 8px solid transparent
+    border-top-color $blueLagoon
+    border-bottom 0
 
-    &::after
-        content ''
-        width 0
-        height 0
-        position absolute
-        bottom -8px
-        left 50%
-        margin-left -8px
-        border 8px solid transparent
-        border-top-color $blueLagoon
-        border-bottom 0
+  &.type-warn
+    background-color $orangeSun
+    color #000
 
-    &.type-warn
-        background-color $orangeSun
-        color #000
-
-    &.type-error
-        background-color $redCherry
+  &.type-error
+    background-color $redCherry

@@ -1,41 +1,73 @@
+/**
+ * @package Lyssl
+ * @module Table
+ */
+
+/**
+ * Table mixin
+ *
+ * Styles a table tag
+ *
+ * @mixin ll-table
+ *
+ * @preview
+ * <table class="ll-table">
+ *   <tr>
+ *     <th>Name</th>
+ *     <th>Value</th>
+ *   </tr>
+ *   <tr>
+ *     <td>Banana</td>
+ *     <td>Fruit</td>
+ *   </tr>
+ *   <tr>
+ *     <td>Cupsicum</td>
+ *     <td>Vegetable</td>
+ *   </tr
+ * </table>
+ *
+ * @example {html}
+ * @{tags.examples.0.html}
+ */
 ll-table()
-    background-color #ddd
-    min-width 500px
-    font-size 13px
-    border-radius 5px
-    border-collapse collapse
+  background-color #ddd
+  min-width 500px
+  font-size 13px
+  border-radius 5px
+  border-collapse collapse
 
-    $tbodyTextColor = #333
-    $tbodyBackColor = #ddd
-    $tableBorderRadius = 5px
-    $tableBodyPadding = 3px 5px
-    $tableHeadPadding = 3px 5px
+  $tbodyTextColor = #333
+  $tbodyBackColor = #ddd
+  $tableBorderRadius = 5px
+  $tableBodyPadding = 3px 5px
+  $tableHeadPadding = 3px 5px
 
-    thead
-        th
-            background-color darken($tbodyBackColor, 3)
-            font-size 12px
-            padding $tableHeadPadding
-            text-align left
+  thead
+    th
+      background-color darken($tbodyBackColor, 3)
+      font-size 12px
+      padding $tableHeadPadding
+      text-align left
+      border-spacing collapse
 
-            &:first-child
-                border-top-left-radius $tableBorderRadius
+      &:first-child
+        border-top-left-radius $tableBorderRadius
 
-            &:last-child
-                border-top-right-radius $tableBorderRadius
+      &:last-child
+        border-top-right-radius $tableBorderRadius
+  td
+    padding $tableBodyPadding
+    color $tbodyTextColor
+    background-color $tbodyBackColor
+
+  tr:nth-child(2n+1)
     td
-        padding $tableBodyPadding
-        color $tbodyTextColor
-        background-color $tbodyBackColor
+      background-color lighten($tbodyBackColor, 3)
 
-    tr:nth-child(2n+1)
-        td
-            background-color lighten($tbodyBackColor, 3)
+  tr:last-child
+    td
+      &:first-child
+        border-bottom-left-radius $tableBorderRadius
 
-    tr:last-child
-        td
-            &:first-child
-                border-bottom-left-radius $tableBorderRadius
-
-            &:last-child
-                border-bottom-right-radius $tableBorderRadius
+      &:last-child
+        border-bottom-right-radius $tableBorderRadius
