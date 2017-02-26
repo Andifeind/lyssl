@@ -1,0 +1,32 @@
+/**
+ * @package Lyssl
+ * @module List
+ */
+
+/**
+ * List mixin
+ *
+ * Styles a ul li list
+ *
+ * @mixin ll-list
+ *
+ * @preview
+ * <ul class="ll-list">
+ *   <li>Banana</li>
+ *   <li>Apple</li>
+ *   <li>Coconut</li>
+ *   <li>Cupsicum</li>
+ *   <li>Pineapple</li>
+ * </ul>
+ *
+ * @example {html}
+ * @{tags.examples.0.html}
+ */
+ll-list()
+  $listBackColor = #ddd
+  margin 0
+
+  li
+    background-color $listBackColor
+  li:nth-child(2n)
+    background-color lighten($listBackColor, 3)

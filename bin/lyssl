@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+const path = require('path');
+const gulp = require('gulp');
+const stylus = require('gulp-stylus');
+
+const sourcemaps = require('gulp-sourcemaps');
+
+const destDir = './public/styles/';
+
+console.log('Transpile ./styl/main.styl');
+
+gulp.src('./styl/main.styl')
+.pipe(sourcemaps.init())
+.pipe(stylus({
+  include: [
+    path.join(__dirname, '../'),
+    path.join(__dirname, '../node_modules/'),
+    path.join(__dirname, '../styl/')
+  ]
+}))
+.pipe(sourcemaps.write('.'))
+.pipe(gulp.dest(destDir));
+
+console.log(`Write to ${destDir}/main.css`);
